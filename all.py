@@ -47,3 +47,23 @@ while True:
    break
 
 print str2.swapcase()
+
+**********************************************************************************
+def sort1(list2):
+   return list1
+list1= []
+while True:
+  inp=raw_input()
+  list1.append(inp)
+  if inp=='end':
+    break
+  int(inp)
+for i in range(len(list1)):
+   for j in range(len(list1)-1):
+     if list1[i]<list1[j]:
+       t=list1[i]
+       list1[i]=list1[j]
+       list1[j]=t
+list1.remove('end')
+print list1
+sort1(list1)
