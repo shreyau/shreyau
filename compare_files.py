@@ -1,3 +1,8 @@
+#compare_files.py
+#comparing the files to get matched lines and status
+#storing the matched lines into a separate file
+
+
 import re
 import time
 import sys
