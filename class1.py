@@ -2,6 +2,8 @@
 #file parsing using object oriented programming
 #inserting data into the database
 #!/usr/bin/python
+
+
 import re
 import sys
 import mysql.connector
@@ -57,7 +59,6 @@ class Work:
   print len(aps)
   for ap in aps:
 	print ap
-	#conn.commit() 
   print "added"
 
   for ap in aps:
@@ -117,7 +118,9 @@ class Work:
             #print timer.group() 
             timer1=str(timer.group())
             timer2=timer1.split(':')
-            print timer2[1]              #Timer
+            print timer2[1]             #Timer
+	    timer3=timer2[1].split('in ')
+            print timer3[1]
 	if hw_sw:
            # print hw_sw.group()
             hw_sw1=str(hw_sw.group())
@@ -135,7 +138,7 @@ class Work:
             print mod_ser3[0]           #model
             print mod_ser3[1]           #serial number
         if mac and ipv4 and ipv6 and name and tunnel_sec and state and mesh and psk and timer and hw_sw and mod_ser:
-             query1= "insert into acc(MACAddress,IPV4Address,IPV6Address,Name,State,Tunnel,Sec_Mode,Mesh_Role,PSK,Timer,HW_Version,SW_Version,Model,Serial_Number) values('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');" % (mac.group(),ipv4.group(),ipv6.group(),name2[1],state2[1],tunnel_sec3[0],tunnel_sec3[1],mesh2[1],psk2[1],timer2[1],hw_sw3[0],hw_sw3[1],mod_ser3[0],mod_ser3[1])
+             query1= "insert into acc(MACAddress,IPV4Address,IPV6Address,Name,State,Tunnel,Sec_Mode,Mesh_Role,PSK,Timer,HW_Version,SW_Version,Model,Serial_Number) values('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');" % (mac.group(),ipv4.group(),ipv6.group(),name2[1],state2[1],tunnel_sec3[0],tunnel_sec3[1],mesh2[1],psk2[1],timer3[1],hw_sw3[0],hw_sw3[1],mod_ser3[0],mod_ser3[1])
              self.cursor.execute(query1)
              self.conn.commit()
        
